@@ -1,8 +1,21 @@
 import { faLayerGroup, faList, faTruck, faUser, faWarehouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Dashboard from "../component/Dashboard";
+import { useState } from "react";
+import Trucks from "../component/Trucks";
+import Inventories from "../component/Inventories";
+import Suppliers from "../component/Suppliers";
 
 const Home = () => {
+
+    // State declarations
+    const [navigation, setNavigation] = useState("Dashboard");
+
+    // Handle click navigation
+    const handleClickNavigation = (e) => {
+        setNavigation(e.currentTarget.id);
+    }
+
     return(
         <>
             <div className="grid grid-cols-[1fr_3fr] h-screen font-mono">
@@ -14,19 +27,19 @@ const Home = () => {
 
                     {/* Navigation buttons */}
                     <div className="flex flex-col justify-center ml-16 mt-8 gap-4 w-full">
-                        <div role="button" className="flex flex-row items-center gap-2 hover:bg-white hover:text-slate-800 cursor-pointer p-1 rounded-sm">
+                        <div id="Dashboard" onClick={handleClickNavigation} role="button" className="flex flex-row items-center gap-2 hover:bg-white hover:text-slate-800 cursor-pointer p-1 rounded-sm">
                             <FontAwesomeIcon icon={faLayerGroup} />
                             <p>Dashboard</p>
                         </div>
-                        <div className="flex flex-row items-center gap-2 hover:bg-white hover:text-slate-800 cursor-pointer p-1 rounded-sm">
+                        <div id="Trucks" onClick={handleClickNavigation} role="button" className="flex flex-row items-center gap-2 hover:bg-white hover:text-slate-800 cursor-pointer p-1 rounded-sm">
                             <FontAwesomeIcon icon={faList} />
                             <p>Trucks</p>
                         </div>
-                        <div className="flex flex-row items-center gap-2 hover:bg-white hover:text-slate-800 cursor-pointer p-1 rounded-sm">
+                        <div id="Inventories" onClick={handleClickNavigation} role="button" className="flex flex-row items-center gap-2 hover:bg-white hover:text-slate-800 cursor-pointer p-1 rounded-sm">
                             <FontAwesomeIcon icon={faWarehouse} />
                             <p>Inventories</p>
                         </div>
-                        <div className="flex flex-row items-center gap-2 hover:bg-white hover:text-slate-800 cursor-pointer p-1 rounded-sm">
+                        <div id="Suppliers" onClick={handleClickNavigation} role="button" className="flex flex-row items-center gap-2 hover:bg-white hover:text-slate-800 cursor-pointer p-1 rounded-sm">
                             <FontAwesomeIcon icon={faUser} />
                             <p>Suppliers</p>
                         </div>
@@ -34,7 +47,9 @@ const Home = () => {
                      <div></div>
                 </div>
                 {/* Content */}
-                <Dashboard />
+                {
+                    navigation === "Dashboard" ? <Dashboard /> : navigation === "Trucks" ? <Trucks /> : navigation === "Inventories" ? <Inventories /> : navigation === "Suppliers" ? <Suppliers /> : <p>Error</p>
+                }
             </div>
         </>
     )  
