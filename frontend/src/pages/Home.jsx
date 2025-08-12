@@ -1,4 +1,4 @@
-import { faBell, faLayerGroup, faList, faRightFromBracket, faTruck, faUser, faWarehouse } from "@fortawesome/free-solid-svg-icons";
+import { faLayerGroup, faList, faRightFromBracket, faTruck, faUser, faWarehouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Dashboard from "../component/Dashboard";
 import { useState } from "react";
@@ -47,12 +47,11 @@ const Home = () => {
                      <div></div>
                 </div>
                 {/* Content */}
-                <div className="flex flex-col">
+                <div className="flex flex-col max-h-screen">
                     {/* Header */}
                     <div className="flex flex-row items-center justify-between border-b-3 border-gray-400 p-4">
                         <h1 className="text-xl">Welcome back, PeeDegrees!</h1>
                         <div className="flex flex-row items-center gap-4">
-                            <FontAwesomeIcon icon={faBell} className="text-lg cursor-pointer" arial-label="Notification" />
                             <FontAwesomeIcon icon={faRightFromBracket} className="text-lg cursor-pointer" arial-label="Logout" />
                         </div>
                         

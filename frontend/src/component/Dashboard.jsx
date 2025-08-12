@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Dashboard = () => {
     return(
-        <div className="bg-teal-400 p-6 h-screen font-mono">
+        <div className="flex flex-col gap-4 h-full bg-teal-400 p-6 font-mono">
+            {/* Overview */}
             <div className="grid grid-cols-[1fr_1fr] gap-8">
                 {/* Inventory Overview */}
-                <div className="flex flex-col gap-2 bg-white rounded-md shadow-md shadow-gray-600 p-2">
+                <div className="flex flex-col gap-2 bg-white rounded-md shadow-md shadow-gray-600 p-3">
                     <h1 className="text-xl">Inventory Overview</h1>
                     <div className="grid grid-cols-2 gap-4">
                         <div className="flex flex-row items-center gap-2">
@@ -34,7 +35,7 @@ const Dashboard = () => {
                 </div>
 
                 {/* Trucks overview */}
-                <div className="flex flex-col gap-2 bg-white rounded-md shadow-md shadow-gray-600 p-2">
+                <div className="flex flex-col gap-2 bg-white rounded-md shadow-md shadow-gray-600 p-3">
                     <h1 className="text-xl">Trucks Overview</h1>
                     <div className="grid grid-cols-2 gap-4">
                         <div className="flex flex-row items-center gap-2">
@@ -66,6 +67,33 @@ const Dashboard = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            {/* Top 5 used items + Alerts */}
+            <div className="grid grid-cols-[1fr_1fr] gap-8">
+                {/* Top 5 used items */}
+                <div className="flex flex-col gap-2 bg-white rounded-md shadow-md shadow-gray-600 p-3">
+                    <h1 className="text-xl">Top 5 used items</h1>
+                    <ul className="list-decimal pl-8">
+                        <li>Air baterai A</li>
+                        <li>Air baterai B</li>
+                        <li>Air baterai C</li>
+                        <li>Air baterai D</li>
+                        <li>Air baterai E</li>
+                    </ul>
+                </div>
+
+                {/* Low Stock Reminder */}
+                <div className="flex flex-col gap-2 bg-white rounded-md shadow-md shadow-gray-600 p-3">
+                    <h1 className="text-xl">Low Stock Reminder</h1>
+                    <ul className="list-disc pl-8">
+                        <li>Air baterai A</li>
+                        <li>Air baterai B</li>
+                        <li>Air baterai C</li>
+                        <li>Air baterai D</li>
+                        <li>Air baterai E</li>
+                    </ul>
                 </div>
             </div>
             
