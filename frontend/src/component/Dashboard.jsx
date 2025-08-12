@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Dashboard = () => {
     return(
-        <div className="flex flex-col gap-4 h-full bg-teal-400 p-6 font-mono">
+        <div className="flex flex-col gap-4 h-full bg-gray-300 p-6 font-mono">
             {/* Overview */}
             <div className="grid grid-cols-[1fr_1fr] gap-8">
                 {/* Inventory Overview */}

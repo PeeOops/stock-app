@@ -1,7 +1,9 @@
 const Trucks = () => {
     return(
         <div>
-            <h1>Trucks</h1>
+            <div className="flex flex-row items-center justify-between">
+                <h1 className="text-xl">Trucks</h1>
+            </div>
         </div>
     )
 }
